@@ -10,12 +10,22 @@ const Content = styled.div`
 `;
 
 const Button = styled.button`
+  transition: box-shadow 0.2s ease;
   background-color: ${(props) => (props.primary ? "purple" : "white")};
   color: ${(props) => (props.primary ? "white" : "purple")};
   padding: 10px 15px;
   border: solid 2px purple;
   border-radius: 4px;
   margin: 2px;
+
+  &:hover {
+    box-shadow: 1px 2px 5px rgb(0, 0, 0, 0.3);
+  }
+
+  &.secondary {
+    background-color: salmon;
+    border: solid 2px salmon;
+  }
 `;
 
 const BlockButton = styled(Button)`
@@ -37,6 +47,9 @@ const App = () => {
       <P>Hola soy un parrafo!</P>
       <Button>Enviar</Button>
       <Button primary>Enviar</Button>
+      <Button primary className="secondary">
+        Enviar
+      </Button>
       <Button primary={true}>Enviar</Button>
       <BlockButton>Enviar</BlockButton>
       <BlockButton primary>Enviar</BlockButton>
