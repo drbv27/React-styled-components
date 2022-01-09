@@ -17,6 +17,11 @@ const Button = styled.button`
   border-radius: 4px;
 `;
 
+const BlockButton = styled(Button)`
+  width: 100%;
+  font-size: 24px;
+`;
+
 const App = () => {
   return (
     <Content>
@@ -24,6 +29,8 @@ const App = () => {
       <Button>Enviar</Button>
       <Button primary>Enviar</Button>
       <Button primary={true}>Enviar</Button>
+      <BlockButton>Enviar</BlockButton>
+      <BlockButton primary>Enviar</BlockButton>
     </Content>
   );
 };
