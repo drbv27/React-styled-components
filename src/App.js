@@ -41,10 +41,23 @@ const StyledLink = styled(Link)`
   color: blue;
 `;
 
+const Input = styled.input.attrs((props) => ({
+  type: "text",
+  color: props.color || "purple",
+}))`
+  font-size: 20px;
+  border: 1px solid purple;
+  color: ${(props) => props.color};
+`;
+
+const Password = styled(Input).attrs({
+  type: "password",
+})``;
+
 const App = () => {
   return (
     <Content>
-      <P>Hola soy un parrafo!</P>
+      <P>Hola soy un parrafo</P>
       <Button>Enviar</Button>
       <Button primary>Enviar</Button>
       <Button primary className="secondary">
@@ -58,6 +71,8 @@ const App = () => {
       </BlockButton>
       <Link>Enlace</Link>
       <StyledLink>Enlace con estilo</StyledLink>
+      <Input color="blue" />
+      <Password />
     </Content>
   );
 };
